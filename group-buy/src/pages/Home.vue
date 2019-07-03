@@ -6,39 +6,66 @@
 				<span></span>
 			</a> 
             <div class="top_tit">快答答题</div>
-            <div class="right_div" onclick="document.location.href='message.html';">
+            <div class="right_div">
             	<a href="#"></a>
             	<div class="news"></div>
             </div>
 		</div>
 	</header>
-		<Swiper :banner="banner"></Swiper>
-		<List :list="list"></List>
+		<!--绑定getters传过来的数据-->
+		<Swiper :banner="banner" :dataName="'home'"></Swiper>
+		<List :list="home" :dataName="'home'"></List>
 	</div>
 </template>
 
 <script>
 	import Swiper from "../components/Swiper"
 	import List from "../components/List"
-	
+	import {UPDATE_HOME,UPDATE_BANNER} from "../store/types"
+//	从getters里面拿数据,要引入mapGetters来自于vuex身上的一个类
+//	用computed接收，
+//	mapActions是metedos接收,返回都是一个对象
+	import {mapGetters} from "vuex";
 	export default{
-		data(){
-			return {
-				list:[],
-				banner:[]
-			}
-		},
+//		data(){
+//			return {
+//				list:[],
+//				banner:[]
+//			}
+//		},
 		components:{
 			Swiper,
 			List
 		},
+//		用computed接收mapGetters([getters里面传过来的数据])
+		computed:mapGetters(["home","banner"]),
 		mounted(){
-			
+//			axios({
+//				url:"/api/home",
+//				params:{_page:1,_limit:13}
+//			}).then(
+//				(res)=>{
+//					this.list = res.data.data;
+//					console.log(res)
+//				}
+//			),
+//			1.自定义的名字->到actions里面的键,没有引入types，要给自定义名字加上引号
+			this.$store.dispatch(UPDATE_HOME)
+			this.$store.dispatch(UPDATE_BANNER)
+//			axios({
+//				url:"/api/banner",
+//				params:{_page:1,_limit:20}
+//			}).then(
+//				(res)=>{
+//					this.banner = res.data.data;
+//					console.log(res)
+//				}
+//			)
 		}
 	}
 </script>
 <style>
-	#header{ overflow: hidden; text-align: center; width:100%; margin:0 auto;  z-index:99; position:fixed; top:0;}
+	#header{ overflow: hidden; text-align: center; width:100%; margin:0 auto;  z-index:99; top:0;}
 #header .header_con{width:100%; background:#35353a; max-width:640px; min-width:320px; color:#fff; margin:0 auto; position:relative;
 height:0.88rem;font-size:0.32rem;
 }
@@ -68,5 +95,5 @@ border-radius: 50%;
 box-sizing: border-box;
 -webkit-box-sizing: border-box;
 }
-.header_con .top_tit{ line-height:0.88rem;}
+.header_con .top_tit{ line-height:0.8rem;}
 </style>

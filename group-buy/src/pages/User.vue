@@ -2,9 +2,7 @@
 	<header id="header">
 		<div class="header_con">
 			<div class="top_tit">个人中心</div>
-			<div class="right_div">
-				<a href=""></a>
-			</div>
+			
 		</div>
 		<!------->
 		<div id="content_div_b" class="p_bottom">
@@ -30,7 +28,7 @@
 					<i></i>
 				</ul>
 				<ul>
-					<li><em></em>年龄 <span style="margin-right: -0.8rem;">
+					<li><em></em>年龄 <span style="margin-right: -0.1rem;">
 						
 						<select class="form-control">
 							<option>18</option>
@@ -54,7 +52,7 @@
 					<i></i>
 				</ul>
 				<ul>
-					<li><em></em> 地区 <span style="margin-right: -1.4rem;" id="city_text1" class="r-tx-txt2 r-tx-txt2s fl">安徽省 六安市</span></li>
+					<li><em></em> 地区 <span style="margin-right: -0.4rem;" id="city_text1" class="r-tx-txt2 r-tx-txt2s fl">安徽省 六安市</span></li>
 					<i></i>
 				</ul>
 				<ul class="borefeff4">
@@ -74,15 +72,165 @@
 			<div class="button-setup">退出</div>
 		</div>
 	</header>
+
 </template>
 
 <script>
 </script>
 
-<style>
-	#header{ text-align: center; width:100%; margin:0 auto;  z-index:99;}
-#header .header_con{width:100%; background:#35353a; max-width:640px; min-width:320px; color:#fff; margin:0 auto; position:relative;
-height:0.88rem;font-size:0.32rem;
+<style scoped>
+	#content_div_b{
+	margin-top:1rem;
+	background-color: #efeff4;
+	min-height: 9rem;
+	}
+.cp_list ul i {
+    background: url(../assets/images/right_01.png) no-repeat;
+    background-size: 0.19rem 0.3rem;
+    top: 0.23rem;
+    right: 0.1rem;
+}
+.cp_list ul li {
+    padding-left: 0.38rem;
+    position: relative;
+    line-height: 0.76rem;
+    font-size: 0.26rem;
+    color: #666;
+}
+#photo-center{height: 1.2rem;line-height: 1.2rem;}
+
+.photo-center li {
+    display: block;
+    height: 1rem;
+    width:1rem;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+ul#photo-center li img {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+}
+
+ul#photo-center i {
+    line-height: 0.4rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.15rem;
+    color: #000;
+    font-style: normal;
+    width: 1.25rem;
+    background-position: 0.85rem;
+}
+.cp_list ul li span {
+    font-size:normal;
+    color: #666;
+    float: right;
+    padding-right: 0.6rem;
+}
+.cp_list ul li em {
+    position: absolute;
+    left: -0.1rem;
+    top: 0.13rem;
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url(../assets/images/icons_os1.png) no-repeat;
+    background-size: 1.8rem 1.8rem;
+}
+.cp_list ul:nth-of-type(2) li em {
+    background-position: -0.45rem -0.4rem;
+}
+.cp_list ul:nth-of-type(3) li em {
+    background-position: -0.9rem -0.4rem;
+}
+.cp_list ul:nth-of-type(4) li em {
+    background-position: -1.38rem -0.4rem;
+}
+.cp_list ul:nth-of-type(6) li em {
+    background-position: -0.46rem 0rem;
+}
+.cp_list ul:nth-of-type(7) li em {
+    background-position: -0.9rem 0rem;
+}
+.cp_list ul:nth-of-type(8) li em {
+    background-position: -0.0rem  -0.4rem;
+}
+.cp_list ul:nth-of-type(9) li em {
+    background-position:-1.35rem -0rem;
+}
+.cp_list ul:nth-of-type(10) li em {
+    background-position:-0.0rem -0.86rem;
+}
+.shock, .clock{
+    width: 0.65rem;
+    position: absolute;
+    right: 0.2rem;
+    top:0.15rem;
+    overflow: hidden;
+}
+.shock{
+	background: url(../assets/img/center18.png);
+    background-repeat: no-repeat;
+    background-size: 0.65rem 0.4rem;
+    width: 0.65rem;
+    height: 0.4rem;
+    cursor: pointer;
+      display: block;
+    }
+ .shock-off{
+	background: url(../assets/img/center110.png);
+    background-repeat: no-repeat;
+    background-size: 0.65rem 0.4rem;
+    display: block;
+    width: 0.65rem;
+    height: 0.4rem;
+    }
+.clock{
+	background-image:url(../assets/img/center110.png);
+	background-repeat: no-repeat;
+    background-size: 0.65rem 0.4rem;
+    display: block;
+    width: 0.65rem;
+    height: 0.4rem;
+    cursor: pointer;
+    }
+.clock-on{
+	background-image:url(../assets/img/center18.png);
+	background-repeat: no-repeat;
+    background-size: 0.65rem 0.4rem;
+    display: block;
+    width: 0.65rem;
+    height: 0.4rem;
+    }
+.borefeff4{border-top: solid 5px #EFEFF4;}
+.cp_list ul {
+    height: 0.76rem;
+    padding-left: 0.26rem;
+    border-bottom: 1px solid #EFEFF4;
+    position: relative;
+}
+.button-setup{
+	width:86%;
+	margin:auto;
+	background-color: #f00;
+	border-radius:50px;
+	height:46px;
+	line-height:46px;
+	font-size:22px;
+	color: #fff;
+	text-align: center;
+	margin-top: 25px;
+	}
+	/*--------------*/
+	
+#header .header_con{width:100%; background:#35353a; max-width:640px; min-width:320px; color:#fff; margin:0 auto; position:fixed;
+height:0.88rem;font-size:0.32rem;z-index: 99;
 }
 #header .header_con span{float:left; display:block; position:absolute; top:0; left:0; width:0.48rem; position:fixed; top:0;}
 #header .header_con span{ position:absolute; top:0.2rem; left:0.16rem;
@@ -94,22 +242,8 @@ height:0.88rem;font-size:0.32rem;
 	background-position: 0rem 0rem;	
 }
 
-#header .header_con .right_div{ position:absolute; height:0.88rem; top:0; right:0;}
-#header .header_con .right_div div i{ display: inline-block; margin-top:0.2rem; margin-right:0.16rem;
-	background: url(../assets/images/lk_icon.png) no-repeat;
-	background-size: 1.44rem 1.44rem;
-	width: 0.48rem;
-	height: 0.48rem;
-	background-position: -0.96rem 0rem;	}
-#header .header_con .right_div div{ position:relative;}
-#header .header_con .right_div div em{ position:absolute; top:0.14rem; right:0.14rem;font-family: Arial, Helvetica, sans-serif;
-border:1px solid #dd334b;  width:0.26rem; height:0.26rem; text-align:center;  vertical-align:middle; line-height:0.24rem; background:#fff;
-color:#dc3048; font-size:0.13rem;
--webkit-border-radius: 50%;	
-border-radius: 50%;	
-box-sizing: border-box;
--webkit-box-sizing: border-box;
-}
+
+
 .header_con .top_tit{ line-height:0.88rem;}
 /*-------*/
 /*.fl{float: left;}
@@ -311,4 +445,17 @@ ul#photo-center i {
     }
 
 #color-blue{color:#5497fa;}
+.button-setup{
+	width:86%;
+	margin:auto;
+	background-color: #f00;
+	border-radius:50px;
+	height:46px;
+	line-height:46px;
+	font-size:22px;
+	color: #fff;
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom:85px ;
+	}
 </style>

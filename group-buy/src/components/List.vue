@@ -25,12 +25,21 @@
 		<div class="news">
 			<h3>今日新闻</h3>
 			<ul>
-				<li>111111</li>
-				<li>22222</li>
-				<li>33333</li>
-				<li>444444</li>
-				<li>55555</li>
-				<li>6666666</li>
+				<transition-group
+					enter-active-class = "animated zoomInLeft"
+    		leave-active-class = "animated zoomOutRight"
+					>
+				
+				<li v-for="(item,index) of list" :key="item._id">
+					<router-link :to="{name:'detail',params:{aid:item._id},query:{dataName:dataName}}">
+						<h4>
+							{{index +1 }}.{{item.title}}
+						</h4>
+						<!--<p>{{item.des}}</p>-->
+					</router-link>
+					
+				</li>
+				</transition-group>
 			</ul>
 		</div>
 	<!--<div class="ph">
@@ -46,16 +55,21 @@
 </template>
 
 <script>
-	export default{
-		props:[""]
-	}
+	
+export default {
+  
+  props:["list","dataName"]
+}  
+
 </script>
 
-<style>
+<style scoped>
 .news{}
-.news h3{font:26px/70px "";border-bottom:2px solid #000 ;color: #000;}
-.news ul{}
+.news h3{font:30px/50px "";text-align: center;}
+/*.news h3{font:26px/70px "";border-bottom:2px solid #000 ;color: #000;}*/
+.news ul{margin-bottom:.8rem}
 .news ul li{height:60px;border-bottom:1px dashed #ccc;color:#000;font:16px/60px "";}
+.news ul li h4{max-height:0.9rem; font-size:0.25rem; overflow:hidden;}
 
 /*.small_xx_btn{
 	width: 100%;

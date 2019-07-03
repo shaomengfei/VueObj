@@ -23,7 +23,7 @@ let routes = [
 	{path:'/contact',component:Contact},
 	{path:'/reg',component:Reg},
 	{path:'/login',component:Login},
-	{path:'/detail',component:Detail},
+	{path:'/detail/:aid',name:"detail",component:Detail},
 	{path:'/',redirect:'/home'},
 	
 //	{path:'*',component:ErrorPage}
