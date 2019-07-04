@@ -1,6 +1,6 @@
 <template>
 
-	<header id="header">
+	<div id="header">
 		<div class="header_con">
 			<!--<a href="#" class="back">
 				<span></span>
@@ -120,7 +120,7 @@
             		<p>我的</p>
             	</div>
             </div>-->
-	</header>
+	</div>
 </template>
 
 <script>

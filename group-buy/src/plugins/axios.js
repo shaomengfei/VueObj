@@ -29,10 +29,6 @@ axios.interceptors.response.use(function (response) {
 });
 
 
-
-
-
-
 Vue.prototype.$axios = axios;// 组件里面: this.$axios;
 window.axios = axios; //组件，非组件里面都可以  axios()
 

@@ -58,7 +58,11 @@
 	
 export default {
   
-  props:["list","dataName"]
+  props:["list","dataName"],
+  mounted(){
+  	console.log(this.list,this.dataName)
+  }
+  
 }  
 
 </script>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 //2.引入
-import {UPDATE_HOME,UPDATE_BANNER,UPDATE_DETAIL,VIEW_FOOT,VIEW_LOADING,} from "./types"
+import {UPDATE_HOME,UPDATE_BANNER,UPDATE_DETAIL,VIEW_FOOT,VIEW_LOADING} from "./types"
 export default{
 //	键:回调函数({state,commit},payload)=>{
 //				请求数据
@@ -9,7 +9,7 @@ export default{
 	[UPDATE_HOME]:({state,commit},payload)=>{
 		axios({
 			url:"/api/home",
-			params:{_limit:10,_page:1}
+			params:{_limit:15,_page:1}
 		}).then(
 			(res)=>{
 //				3自定义的名字:(大写)，后面传数据
@@ -29,14 +29,17 @@ export default{
 	},
 	[UPDATE_DETAIL]:({state,commit},payload)=>{
 		axios({
-			url:`/api/${dataName}/${id}`,
-			
+			url:`/api/${payload.dataName}/${payload.id}`
+
 		}).then(
-			(res)=>{
-				commit(UPDATE_DETAIL,res.data.data)
-			}
+			res=>commit(UPDATE_DETAIL,res.data.data)
 		)
 	},
+//	[UPDATE_DETAIL] : async ({state,commit},{dataName,id}) => {
+//  let res = await axios({url:`/api/${dataName}/${id}`});
+//  commit(UPDATE_DETAIL,res.data.data)
+//},
+  
 	[VIEW_FOOT] : ({state,commit},payload) => commit(VIEW_FOOT,payload),
 
   [VIEW_LOADING] : ({state,commit},payload) => commit(VIEW_LOADING,payload),

@@ -47,16 +47,16 @@
 }
 
 
-.index-off{background: url(../assets/img/index.png) no-repeat 40px 32px;}
-.jf-off{background: url(../assets/img/jifen.png) no-repeat 40px 33px;}
-.call-off{background: url(../assets/img/call.png) no-repeat 40px 35px;}
-.my-off{background: url(../assets/img/my.png)no-repeat 40px 32px;}
+.index-off{background: url(../assets/img/index.png) no-repeat 38px 28px;}
+.jf-off{background: url(../assets/img/jifen.png) no-repeat 35px 28px;}
+.call-off{background: url(../assets/img/call.png) no-repeat 35px 28px;}
+.my-off{background: url(../assets/img/my.png)no-repeat 35px 28px;}
 
 
-.index{background:url(../assets/img/index_on.png) no-repeat 40px 32px;}
-.jf{background: url(../assets/img/jifen_on.png) no-repeat 40px 33px;}
-.call{background: url(../assets/img/call_on.png) no-repeat 40px 35px;}
-.my{background: url(../assets/img/my_on.png) no-repeat 40px 32px;}
+.index{background:url(../assets/img/index_on.png) no-repeat 38px 28px;}
+.jf{background: url(../assets/img/jifen_on.png) no-repeat 35px 28px;}
+.call{background: url(../assets/img/call_on.png) no-repeat 35px 28px;}
+.my{background: url(../assets/img/my_on.png) no-repeat 35px 28px;}
 
 
 .tab_bar p{

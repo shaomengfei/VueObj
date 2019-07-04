@@ -39,21 +39,21 @@
 <script>
 	import {mapGetters} from 'vuex';
 export default {
-  name:'Detail',
-data(){
-    return {
-      detail:{}
-    }
-},
-computed:mapGetters([
-    'detail'				//接收数据
-]),
-methods:{
-    goback(){
-      this.$router.go(-1)
-    }
-},
-props:['aid','dataName'],
+  	name:'Detail',
+//data(){
+//  return {
+//    detail:{}
+//  }
+//},
+	computed:mapGetters([
+	    'detail'				//接收数据
+	]),
+	methods:{
+	    goback(){
+	      this.$router.go(-1)
+	    }
+	},
+//	props:['aid','dataName'],
 //mounted(){
 //  let id = this.$route.params.aid
 //  let dataName = this.$route.query.dataName
@@ -66,12 +66,13 @@ props:['aid','dataName'],
 //    res=>this.detail = res.data.data
 //  )
 //}
-	mounted(){
-		let id = this.aid
-		let dataName = this.dataName
+	created(){
+		console.log(this.$route)
+		let id = this.$route.params.aid
+		let dataName = this.$route.query.dataName
+		console.log(id,dataName)
 		this.$store.dispatch('UPDATE_DETAIL',{id,dataName})		//发送请求
 	}
-
 }
 
 </script>

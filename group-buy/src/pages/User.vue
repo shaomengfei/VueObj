@@ -1,5 +1,5 @@
 <template>
-	<header id="header">
+	<div id="header">
 		<div class="header_con">
 			<div class="top_tit">个人中心</div>
 			
@@ -69,13 +69,54 @@
 					<a href="about.html"><i></i></a>
 				</ul>
 			</div>
-			<div class="button-setup">退出</div>
+			<div class="button-setup" @click="logout">退出</div>
 		</div>
-	</header>
+	</div>
 
 </template>
 
 <script>
+	//	组件守卫
+	export default {
+//		data(){
+//			return {
+//				data:{}
+//			}
+//		},
+		methods:{
+			logout(){
+//				console.log("123")
+				axios({
+					url:"api/logout",
+					method:"put"
+				}).then(
+					res=>{
+						console.log(res)
+						if(res.data.error ===0){
+							this.$router.push('/login')
+						}
+					}
+				)
+			}
+		},
+		beforeRouteenter(to,from,next){
+			console.log("user beforerouteEnter")
+			axios({
+				url:"/api/user"
+			}).then(
+				res=>{
+					if(res.data.error===1){
+						console.log(res.data)
+						next("/login")
+					}else{
+						console.log(res.data)
+						next((_this)=>{_this.data=res.data.data})
+					}
+				}
+			)
+		}
+		
+	}
 </script>
 
 <style scoped>

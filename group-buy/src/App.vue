@@ -45,7 +45,11 @@ export default {
 	  		if (/home|jifen|contact|user/.test(path)) {
 	  				this.$store.commit(types.VIEW_FOOT,true)
 	  		}
-  		},
+  		if(/login|reg/.test(path)){
+          this.$store.dispatch(types.VIEW_FOOT,false)
+       }
+      },
+  		
   		immediate:true
   	}
   },
